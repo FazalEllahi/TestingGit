@@ -22,9 +22,41 @@
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
+    [self copyPlistfileIfNeeded];
+
     return YES;
 }
+-(NSString*)getPlistFilePath{
+    
+    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *documentPath = [[path firstObject] stringByAppendingPathComponent:@"DateList.plist"];
+    
+    return documentPath;
 
+}
+-(NSString*)copyPlistfileIfNeeded
+{
+    NSString * documentPath = [self getPlistFilePath];
+    
+    NSString *plistpath = [[NSBundle mainBundle] pathForResource:@"DateList" ofType:@"plist"];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:documentPath]) {
+        
+        [[NSFileManager defaultManager] copyItemAtPath:plistpath toPath:documentPath error:nil];
+    }
+    return documentPath;
+    
+}
+-(void)SaveDataInplist:(NSArray*)datesArray{
+    
+    [datesArray writeToFile:[self getPlistFilePath] atomically:YES];
+    
+}
+-(NSArray*)loadDataFromplist{
+    
+   return [[NSArray alloc] initWithContentsOfFile:[self getPlistFilePath]];
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

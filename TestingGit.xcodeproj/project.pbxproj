@@ -16,6 +16,7 @@
 		89EAEF7E1BF4A58800E069CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89EAEF7C1BF4A58800E069CD /* LaunchScreen.storyboard */; };
 		89EAEF891BF4A58800E069CD /* TestingGitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EAEF881BF4A58800E069CD /* TestingGitTests.m */; };
 		89EAEF941BF4A58800E069CD /* TestingGitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EAEF931BF4A58800E069CD /* TestingGitUITests.m */; };
+		89EAEFA21BF4B46700E069CD /* DateList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89EAEFA11BF4B46700E069CD /* DateList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		89EAEF8F1BF4A58800E069CD /* TestingGitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingGitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89EAEF931BF4A58800E069CD /* TestingGitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestingGitUITests.m; sourceTree = "<group>"; };
 		89EAEF951BF4A58800E069CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89EAEFA11BF4B46700E069CD /* DateList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DateList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				89EAEF6C1BF4A58800E069CD /* main.m */,
+				89EAEFA11BF4B46700E069CD /* DateList.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			files = (
 				89EAEF7E1BF4A58800E069CD /* LaunchScreen.storyboard in Resources */,
 				89EAEF7B1BF4A58800E069CD /* Assets.xcassets in Resources */,
+				89EAEFA21BF4B46700E069CD /* DateList.plist in Resources */,
 				89EAEF791BF4A58800E069CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +511,7 @@
 				89EAEF9A1BF4A58800E069CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89EAEF9B1BF4A58800E069CD /* Build configuration list for PBXNativeTarget "TestingGitTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				89EAEF9D1BF4A58800E069CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89EAEF9E1BF4A58800E069CD /* Build configuration list for PBXNativeTarget "TestingGitUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				89EAEFA01BF4A58800E069CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
