@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-
+-(void)SaveDataInplist:(NSArray*)datesArray;
+-(NSArray*)loadDataFromplist;
 @end
 

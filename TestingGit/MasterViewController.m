@@ -8,10 +8,13 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "AppDelegate.h"
 
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
+
+@property AppDelegate *delegate;
 @end
 
 @implementation MasterViewController
@@ -24,6 +27,8 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    self.objects = [[NSMutableArray alloc] initWithArray:[self.delegate loadDataFromplist]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -89,5 +94,9 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
-
+-(void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:YES];
+    [self.delegate SaveDataInplist:self.objects];
+}
 @end
