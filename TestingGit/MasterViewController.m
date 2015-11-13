@@ -29,6 +29,7 @@
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     self.objects = [[NSMutableArray alloc] initWithArray:[self.delegate loadDataFromplist]];
+    self.delegate.datesArray = self.objects;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

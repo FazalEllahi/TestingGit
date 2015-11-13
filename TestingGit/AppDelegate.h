@@ -10,6 +10,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (strong, nonatomic) NSMutableArray *datesArray;
+
 @property (strong, nonatomic) UIWindow *window;
 
 -(void)SaveDataInplist:(NSArray*)datesArray;
