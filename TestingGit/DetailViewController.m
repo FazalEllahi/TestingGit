@@ -28,7 +28,9 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
+        [dateFormater setDateFormat:@"yyyy-MM-dd"];
+        self.detailDescriptionLabel.text = [dateFormater stringFromDate:self.detailItem];
     }
 }
 
